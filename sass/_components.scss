@@ -27,10 +27,10 @@
     font-size: inherit;
     background-color: var(--color-grey-light-2);
     border: none;
-    padding: .7rem 2rem;
+    padding: 0.7rem 2rem;
     border-radius: 100px;
     width: 90%;
-    transition: all .2s;
+    transition: all 0.2s;
     margin-right: -3.25rem;
 
     &:focus {
@@ -50,7 +50,7 @@
   }
 
   &__button {
-    border:none;
+    border: none;
     background-color: var(--color-grey-light-2);
 
     &:focus {
@@ -140,7 +140,7 @@
     position: relative;
 
     &:not(last-child) {
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
     }
   }
 
@@ -153,9 +153,8 @@
     width: 3px;
     background-color: var(--color-primary);
     transform: scaleY(0);
-    transition: transform .2s,
-                width .4s cubic-bezier(1,0,0,1) .2s,
-                background-color .1s;
+    transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
+      background-color 0.1s;
   }
 
   &__item:hover::before,
@@ -190,12 +189,13 @@
   }
 }
 
-//  _                     _
-// | |    ___  __ _  __ _| |
-// | |   / _ \/ _` |/ _` | |
-// | |__|  __/ (_| | (_| | |
-// |_____\___|\__, |\__,_|_|
+//  _                     _   _            _
+// | |    ___  __ _  __ _| | | |_ _____  _| |_
+// | |   / _ \/ _` |/ _` | | | __/ _ \ \/ / __|
+// | |__|  __/ (_| | (_| | | | ||  __/>  <| |_
+// |_____\___|\__, |\__,_|_|  \__\___/_/\_\\__|
 //            |___/
+//
 .legal {
   font-size: 1.2rem;
   color: var(--color-grey-light-4);
@@ -203,5 +203,128 @@
   padding: 2.5rem;
 }
 
+//   ____       _ _
+//  / ___| __ _| | | ___ _ __ _   _
+// | |  _ / _` | | |/ _ \ '__| | | |
+// | |_| | (_| | | |  __/ |  | |_| |
+//  \____|\__,_|_|_|\___|_|   \__, |
+//                            |___/
+//
+.gallery {
+  display: flex;
 
+  &__photo {
+    width: 100%;
+    display: block;
+  }
+}
 
+//  _   _       _       _                             _
+// | | | | ___ | |_ ___| |   _____   _____ _ ____   _(_) _____      __
+// | |_| |/ _ \| __/ _ \ |  / _ \ \ / / _ \ '__\ \ / / |/ _ \ \ /\ / /
+// |  _  | (_) | ||  __/ | | (_) \ V /  __/ |   \ V /| |  __/\ V  V /
+// |_| |_|\___/ \__\___|_|  \___/ \_/ \___|_|    \_/ |_|\___| \_/\_/
+//
+.overview {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-grey-light-2);
+
+  &__heading {
+    font-size: 2.25rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1.5rem 3rem;
+  }
+
+  &__stars {
+    margin-right: auto;
+    display: flex;
+  }
+
+  &__icon-star,
+  &__icon-location {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: var(--color-primary);
+  }
+
+  &__location {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon-location {
+    margin-right: 0.5rem;
+  }
+
+  &__rating {
+    background-color: var(--color-primary);
+    color: #fff;
+    margin-left: 3rem;
+    padding: 0 2.25rem;
+    align-self: stretch;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__rating-average {
+    font-size: 2.25rem;
+    font-weight: 300;
+    margin-bottom: -3px;
+  }
+
+  &__rating-count {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+  }
+}
+
+//  ____        _   _
+// | __ ) _   _| |_| |_ ___  _ __  ___
+// |  _ \| | | | __| __/ _ \| '_ \/ __|
+// | |_) | |_| | |_| || (_) | | | \__ \
+// |____/ \__,_|\__|\__\___/|_| |_|___/
+//
+.btn-inline {
+  border: none;
+  color: var(--color-primary);
+  font-size: inherit;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  display: inline-block;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    color: var(--color-grey-dark-1);
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
